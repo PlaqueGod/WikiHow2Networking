@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07834f" />
+  <title>WikiHow2Network</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-block">
+      <div class="site-logo">🖥️ WikiHow2Network</div>
+      <div class="site-tagline">networking explained by a fellow learner</div>
+    </div>
+    <div class="free-badge">⭐ FREE<br />NO ADS (yet)</div>
+  </header>
+
+  <nav class="main-nav" aria-label="Main sections">
+    <button class="nav-button active" data-section="home-page" onclick="showSection('home-page')">🏠 Lessons</button>
+    <button class="nav-button" data-section="lab-section" onclick="showSection('lab-section')">🧪 Network Lab</button>
+    <button class="nav-button" data-section="glossary-section" onclick="showSection('glossary-section')">📚 Glossary</button>
+    <button class="nav-button" data-section="quiz-section" onclick="showSection('quiz-section')">❓ Quick Quiz</button>
+    <button class="nav-button" data-section="about-section" onclick="showSection('about-section')">👋 About</button>
+  </nav>
+
+  <main class="container">
+    <section id="home-page" class="page-section">
+      <div class="section-heading">
+        <p class="little-label">START HERE</p>
+        <h1>What do you want to learn today??</h1>
+        <p>Eight networking lessons. Search for a topic or pick a category!</p>
+      </div>
+
+      <div class="search-row">
+        <label class="visually-hidden" for="search-input">Search lessons</label>
+        <input id="search-input" type="search" class="search-input" placeholder="Try DNS, router, or IP address..." oninput="doSearch()" />
+        <button class="btn-search" onclick="doSearch()">Find lessons</button>
+      </div>
+
+      <div class="progress-box">
+        <div class="progress-row">
+          <span>📊 Your progress</span>
+          <span id="progress-label">0/8 lessons completed</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Lessons completed" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="disclaimer"><strong>⚠️ Quick note: </strong>These lessons are simplified for beginners. Use them to get started, and double-check anything before changing real network settings.</div>
+
+      <div class="category-row" aria-label="Filter lessons by category">
+        <button class="btn-category active" onclick="filterCategory('All')">All</button>
+        <button class="btn-category" onclick="filterCategory('Beginner')">Beginner</button>
+        <button class="btn-category" onclick="filterCategory('Intermediate')">Intermediate</button>
+        <button class="btn-category" onclick="filterCategory('Security')">Security</button>
+        <button class="btn-category" onclick="filterCategory('Hardware')">Hardware</button>
+        <button class="btn-category" onclick="filterCategory('Ports')">Ports</button>
+        <button class="btn-category" onclick="filterCategory('Subnetting')">Subnetting</button>
+      </div>
+      <div id="lessons-grid" class="lessons-grid" aria-live="polite"></div>
+    </section>
+
+    <div id="article-page" style="display:none;"></div>
+
+    <section id="lab-section" class="page-section" hidden>
+      <p class="little-label">OFFLINE DEMO</p>
+      <h1>🧪 Tiny Network Lab</h1>
+      <p class="section-intro">Enter a pretend website name and watch a simulated lookup. This is a local animation, not a real connection or API call.</p>
+      <form id="lab-form" class="tool-panel" onsubmit="runNetworkCheck(event)">
+        <label for="host-input">Website or device name</label>
+        <div class="search-row">
+          <input id="host-input" class="search-input" type="text" placeholder="example.com" pattern="[A-Za-z0-9.]+(-[A-Za-z0-9.]+)*" title="Use letters, numbers, dots, and hyphens" required />
+          <button id="lab-button" class="btn-search" type="submit">Run pretend lookup</button>
+        </div>
+        <p id="lab-status" class="result-message" aria-live="polite">Ready when you are. Nothing will be sent over the internet.</p>
+        <ol id="lab-steps" class="lab-steps" aria-live="polite"></ol>
+      </form>
+    </section>
+
+    <section id="glossary-section" class="page-section" hidden>
+      <p class="little-label">WORDS YOU WILL HEAR</p>
+      <h1>📚 Networking Glossary</h1>
+      <p class="section-intro">Search a few useful networking words. Short and simple explanations, promise.</p>
+      <label class="visually-hidden" for="glossary-search">Search glossary</label>
+      <input id="glossary-search" class="search-input glossary-search" type="search" placeholder="Search terms like router or DNS..." oninput="filterGlossary()" />
+      <div id="glossary-list" class="glossary-list" aria-live="polite"></div>
+    </section>
+
+    <section id="quiz-section" class="page-section" hidden>
+      <p class="little-label">QUICK CHECK</p>
+      <h1>❓ One-question networking quiz</h1>
+      <form id="quiz-form" class="tool-panel" onsubmit="checkQuiz(event)">
+        <fieldset>
+          <legend>Which device mainly connects different networks and forwards traffic using IP addresses?</legend>
+          <label class="quiz-option"><input type="radio" name="quiz-answer" value="switch" required /> A switch</label>
+          <label class="quiz-option"><input type="radio" name="quiz-answer" value="router" /> A router</label>
+          <label class="quiz-option"><input type="radio" name="quiz-answer" value="keyboard" /> A keyboard</label>
+        </fieldset>
+        <button class="btn-search" type="submit">Check my answer</button>
+        <p id="quiz-result" class="result-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="about-section" class="page-section" hidden>
+      <p class="little-label">A SMALL LEARNING PROJECT</p>
+      <h1>👋 About this website</h1>
+      <div class="about-note">
+        <p>WikiHow2Network is a beginner-friendly place to explore how computers talk to each other. It is made for learning, so the writing is informal and the examples are kept simple.</p>
+        <p>The lesson list, glossary, quiz, and pretend network lab all run in your browser. There is no login, tracking, or API connection.</p>
+        <button class="btn-search" onclick="showSection('home-page')">Back to the lessons</button>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-icons">🌐 💻 📡</div>
+      <div class="footer-name">WikiHow2Network</div>
+      <div>Made with curiosity and a lot of trial and error.</div>
+    </footer>
+  </main>
+
+  <script src="scirpt.js"></script>
+</body>
+</html>
