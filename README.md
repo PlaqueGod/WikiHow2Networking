@@ -4,7 +4,7 @@ Student: Joseph Benedict V. Duroga
 Category: Educational Web App / Computer Networking 101
 
 What is WikiHow2Network?
-Computer networking has a bad habit of sounding like an ancient language spoken exclusively by sysadmins. WikiHow2Network is my attempt to fix that. It’s a clean, beginner-friendly web app designed to explain how the internet actually works under the hood—without drowning you in dry jargon or 800-page textbooks.
+Computer networking has a bad habit of sounding like an ancient language spoken exclusively by sysadmins. WikiHow2Network is my attempt to fix that. It’s a clean, beginner-friendly web app designed to explain how the internet actually works under the hood and without drowning you in dry jargon or 800-page textbooks.
 
 Whether you're trying to figure out what a subnet mask does or why your router hates you today, the goal here is simple: fast, digestible answers that make sense.
 
