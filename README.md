@@ -9,7 +9,7 @@ Computer networking has a bad habit of sounding like an ancient language spoken 
 Whether you're trying to figure out what a subnet mask does or why your router hates you today, the goal here is simple: fast, digestible answers that make sense.
 
 Key Features
-8 Bite-Sized Lessons: Core topics broken down for humans—covering IP addresses, DNS, the OSI model, routers, switches, firewalls, ports, and subnetting.
+8 Bite-Sized Lessons: Core topics broken down for humans, covering topics such as IP addresses, DNS, the OSI model, routers, switches, firewalls, ports, and subnetting.
 
 Search & Category Filters: Quickly jump to what you need instead of digging through walls of text.
 
