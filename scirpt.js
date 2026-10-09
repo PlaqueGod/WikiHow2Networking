@@ -1,4 +1,4 @@
-// WikiHow2Network interactions
+
 
 var articles = [
   {
@@ -92,7 +92,7 @@ var articles = [
   },
 ];
 
-// state (the computer remembers finished lessons in this browser)
+
 var completedArticles = [];
 var likedSteps = {};
 var activeCategory = "All";
@@ -259,7 +259,7 @@ function markDone(id) {
   try {
     localStorage.setItem("finished-network-lessons", JSON.stringify(completedArticles));
   } catch (error) {
-    // Progress still works until the page is closed if browser storage is off.
+    
   }
   renderHome();
 }
