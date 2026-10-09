@@ -1,4 +1,4 @@
-/* WikiHow2Network styles */
+
 
 * {
   box-sizing: border-box;
@@ -13,7 +13,7 @@ body {
   color: #333;
 }
 
-/* HEADER */
+
 .site-header {
   background: #009900;
   padding: 10px 20px;
@@ -78,7 +78,6 @@ body {
   padding: 20px;
 }
 
-/* SEARCH */
 .search-section {
   text-align: center;
   margin: 20px 0;
@@ -164,7 +163,7 @@ body {
   background: #f9a825;
 }
 
-/* DISCLAIMER */
+
 .disclaimer {
   background: #fff3cd;
   border: 3px solid #ffc107;
@@ -206,14 +205,14 @@ body {
   color: white;
 }
 
-/* LESSON GRID */
+
 .lessons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 18px;
 }
 
-/* LESSON CARD */
+
 .lesson-card {
   background: white;
   border: 3px solid #333;
@@ -357,7 +356,7 @@ body {
   margin-top: 8px;
 }
 
-/* FOOTER */
+
 .site-footer {
   margin-top: 40px;
   border-top: 3px dashed #009900;
@@ -393,7 +392,7 @@ body {
   font-weight: bold;
 }
 
-/* ARTICLE PAGE */
+
 .btn-back {
   background: white;
   border: 3px solid #333;
@@ -557,7 +556,7 @@ body {
 .btn-no { background: white; color: #333; border-color: #f44336; }
 .btn-no:hover, .btn-no.active { background: #f44336; color: white; }
 
-/* CONGRATS */
+
 .congrats-box {
   background: #c8e6c9;
   border: 3px solid #4caf50;
